@@ -1,0 +1,66 @@
+digraph family_tree {
+    rankdir=TB;
+    bgcolor=white;
+    margin=0.1;
+    pad=0.1;
+    ranksep=0.3;
+    nodesep=0.2;
+    node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10, fixedsize=false, margin=0.1];
+    edge [color=black, penwidth=1.5];
+    
+    
+    "G0_ME" [label="Marjorie Inez Smith\nb. 1920, AR\nd. 1996, TX", fillcolor="gold", style="filled,rounded", tooltip=""];
+    "G0_SPOUSE" [label="Sidney William Stinnett\nb. 1911, AR\nd. 1971, Germany", fillcolor="gold", style="filled,rounded", tooltip=""];
+    "G1_FATHER" [label="James Robert Smith 🔗\nb. 1892\nd. 1963, TX", fillcolor="lightcoral", style="filled,rounded", URL="https://www.findagrave.com/memorial/73130244/james-robert-smith?utm_source=chatgpt.com", target="_blank", tooltip=""];
+    "G1_MOTHER" [label="Alberta Leonard Smith 🔗\nb. 1897\nd. 1978, TX", fillcolor="lightcoral", style="filled,rounded", URL="https://www.findagrave.com/memorial/73130218/alberta-smith", target="_blank", tooltip=""];
+    "G2_PATERNAL_GF" [label="John Henry Smith 🔗\nb. 1862, AL\nd. 1913, TX", fillcolor="lightsteelblue", style="filled,rounded", URL="https://www.findagrave.com/memorial/63528764/john_henry-smith", target="_blank", tooltip=""];
+    "G2_PATERNAL_GM" [label="Mary Francis Reames 🔗\nb. 1867, AL\nd. 1945, TX", fillcolor="lightsteelblue", style="filled,rounded", URL="https://www.findagrave.com/memorial/63528784/mary_francis-smith", target="_blank", tooltip=""];
+    "G2_MATERNAL_GF" [label="William F. Leonard 🔗\nb. 1852\nd. 1919, OK", fillcolor="lightsteelblue", style="filled,rounded", URL="https://ancestors.familysearch.org/en/KP49-YK4/william-franklin-leonard-1852-1919", target="_blank", tooltip=""];
+    "G2_MATERNAL_GM" [label="Margaret Rebecca Garrett 🔗\nb. 1854\nd. 1916, OK", fillcolor="lightsteelblue", style="filled,rounded", URL="https://ancestors.familysearch.org/en/L718-GHY/margaret-rebecca-garrett-1854-1916?utm_source=chatgpt.com", target="_blank", tooltip=""];
+    "G3_REAMES_GGF" [label="James Ransom Reames 🔗\nb. 1835, GA\nd. 1902, AL", fillcolor="lightgreen", style="filled,rounded", URL="https://www.findagrave.com/memorial/49992251/james_ransom-reames", target="_blank", tooltip=""];
+    "G3_TAPLEY_GGM" [label="Caroline Tapley 🔗\nb. 1835\nd. 1925, AL", fillcolor="lightgreen", style="filled,rounded", URL="https://www.findagrave.com/memorial/49992252/caroline-reames", target="_blank", tooltip=""];
+    "G3_LEONARD_GGF" [label="William Mathew Leonard\nb. 1813\nd. 1855", fillcolor="lightgreen", style="filled,rounded", tooltip=""];
+    "G3_McKENZIE_GGM" [label="Elizabeth C. McKenzie\nb. 1819\nd.", fillcolor="lightgreen", style="filled,rounded", tooltip=""];
+    "G3_GARRETT_GGF" [label="Charles N. Garrett\nb. 1823, TN\nd.", fillcolor="lightgreen", style="filled,rounded", tooltip=""];
+    "G3_DOBKINS_GGM" [label="Martha Dobkins\nb. 1826\nd. 1870", fillcolor="lightgreen", style="filled,rounded", tooltip=""];
+    "G4_REAMES" [label="Azariah Reames 🔗\nb. 1782, VA\nd. 1835, AL", fillcolor="wheat", style="filled,rounded", URL="https://www.findagrave.com/memorial/269944027/azariah-reames", target="_blank", tooltip=""];
+    "G4_BLEDSOE" [label="Elizabeth Mary Bledsoe 🔗\nb. 1790, SC\nd. 1850, AL", fillcolor="wheat", style="filled,rounded", URL="https://www.findagrave.com/memorial/269943632/elizabeth_mary-reames", target="_blank", tooltip=""];
+    "G5_REAMES" [label="Joshua Reames 🔗\nb. 1760, VA\nd. 1830, SC", fillcolor="plum", style="filled,rounded", URL="https://www.findagrave.com/memorial/269944682/joshua-reames#source", target="_blank", tooltip=""];
+    
+    // Tree navigation connection boxes
+    
+    // Marriage relationships and rank constraints
+    {rank=same; "G0_ME"; "G0_SPOUSE"};
+    "G0_ME" -> "G0_SPOUSE" [dir=none, color=black, style=dashed, constraint=false, label="m. 1939, AR", fontsize=10, fontcolor=black];
+    {rank=same; "G1_FATHER"; "G1_MOTHER"};
+    "G1_FATHER" -> "G1_MOTHER" [dir=none, color=black, style=dashed, constraint=false, label="m. 1919", fontsize=10, fontcolor=black];
+    {rank=same; "G2_PATERNAL_GF"; "G2_PATERNAL_GM"};
+    "G2_PATERNAL_GF" -> "G2_PATERNAL_GM" [dir=none, color=black, style=dashed, constraint=false, label="m. 1886, AL", fontsize=10, fontcolor=black];
+    {rank=same; "G2_MATERNAL_GF"; "G2_MATERNAL_GM"};
+    "G2_MATERNAL_GF" -> "G2_MATERNAL_GM" [dir=none, color=black, style=dashed, constraint=false, label="m. 1876", fontsize=10, fontcolor=black];
+    {rank=same; "G3_REAMES_GGF"; "G3_TAPLEY_GGM"};
+    "G3_REAMES_GGF" -> "G3_TAPLEY_GGM" [dir=none, color=black, style=dashed, constraint=false];
+    {rank=same; "G3_LEONARD_GGF"; "G3_McKENZIE_GGM"};
+    "G3_LEONARD_GGF" -> "G3_McKENZIE_GGM" [dir=none, color=black, style=dashed, constraint=false];
+    {rank=same; "G3_GARRETT_GGF"; "G3_DOBKINS_GGM"};
+    "G3_GARRETT_GGF" -> "G3_DOBKINS_GGM" [dir=none, color=black, style=dashed, constraint=false, label="m. 1852", fontsize=10, fontcolor=black];
+    {rank=same; "G4_REAMES"; "G4_BLEDSOE"};
+    "G4_REAMES" -> "G4_BLEDSOE" [dir=none, color=black, style=dashed, constraint=false];
+    
+    // Parent-child relationships
+    "G1_FATHER" -> "G0_ME";
+    "G1_MOTHER" -> "G0_ME";
+    "G2_PATERNAL_GF" -> "G1_FATHER";
+    "G2_PATERNAL_GM" -> "G1_FATHER";
+    "G2_MATERNAL_GF" -> "G1_MOTHER";
+    "G2_MATERNAL_GM" -> "G1_MOTHER";
+    "G3_REAMES_GGF" -> "G2_PATERNAL_GM";
+    "G3_TAPLEY_GGM" -> "G2_PATERNAL_GM";
+    "G3_LEONARD_GGF" -> "G2_MATERNAL_GF";
+    "G3_McKENZIE_GGM" -> "G2_MATERNAL_GF";
+    "G3_GARRETT_GGF" -> "G2_MATERNAL_GM";
+    "G3_DOBKINS_GGM" -> "G2_MATERNAL_GM";
+    "G4_REAMES" -> "G3_REAMES_GGF";
+    "G4_BLEDSOE" -> "G3_REAMES_GGF";
+    "G5_REAMES" -> "G4_REAMES";
+}
