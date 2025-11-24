@@ -1,6 +1,7 @@
 ---
 format:
   html:
+    output-file: index.html
     theme: default
     toc: false
     page-layout: full
@@ -80,6 +81,13 @@ format:
         margin: 1em 0;
       }
 
+      /* Ensure footer scrolls with page */
+      footer, .footer {
+        position: static !important;
+        margin-top: 2em;
+        padding: 1em;
+      }
+
       @media (max-width: 768px) {
         .family-tree {
           margin: 0.5em 0;
@@ -103,6 +111,7 @@ format:
 
   This webpage was created by <a href="https://lchogal.github.io/cv/">Leslie Hodges Gallagher</a>, granddaughter of Marjorie Inez Smith (1920-1996). Research relied on crowd-sourced information from Geni.com, FamilySearch.org, and FindAGrave.com. The current tree, published November 2024, should be considered a working draft while primary historical sources are verified.
 
+  Supporting files: [GitHub repository](https://github.com/lchogal/Smith_line)
   Contact: [hodges.gallagher@gmail.com](mailto:hodges.gallagher@gmail.com)
 
 
